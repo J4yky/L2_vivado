@@ -4,7 +4,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity main is
     Port(
-        cathodes : out std_logic_vector(7 downto 0);
+        cathodes : out std_logic_vector(7 downto 0) := "11111111";
         anodes : out std_logic_vector(4 downto 0) := "11111";
         Clock100MHz : in std_logic
     );
@@ -14,8 +14,8 @@ architecture Behavioral of main is
 
 signal cntr_value : integer range 0 to 50000000 := 0;
 signal change_display : integer range 0 to 9 := 0;
-signal number_displayed : std_logic_vector(7 downto 0);
-signal pick_number_displayed: integer range 0 to 9;
+signal number_displayed : std_logic_vector(7 downto 0) := "11111111";
+signal pick_number_displayed: integer range 0 to 10 := 10;
 begin
 
 nmbrs : process(pick_number_displayed)
@@ -42,7 +42,7 @@ case pick_number_displayed is
     when 9 =>
         number_displayed <= "10010000";
     when others =>
-        number_displayed <= "01111111";
+        number_displayed <= "11111111";
 end case;
 
 end process nmbrs;
