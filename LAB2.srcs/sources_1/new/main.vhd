@@ -14,7 +14,7 @@ architecture Behavioral of main is
 
 signal cntr_value : integer range 0 to 50000000 := 0;
 signal change_display : integer range 0 to 9 := 0;
-signal number_displayed : std_logic_vector(9 downto 0);
+signal number_displayed : std_logic_vector(7 downto 0);
 signal pick_number_displayed: integer range 0 to 9;
 begin
 
